@@ -1,31 +1,10 @@
-/* ==========================================================
-   TARA JIM — Main Stylesheet
-   Theme: Black & Gold
-   Table of contents:
-     1. CSS Variables
-     2. Reset & Base
-     3. Utilities & Buttons
-     4. Header & Navigation
-     5. Hero
-     6. About (with Coaches)
-     7. Facilities
-     8. Projects
-     9. Contact
-    10. Footer
-    11. Toast, Back-to-top & Animations
-    12. Responsive (@media queries)
-   ========================================================== */
-
-/* ---------- 1. CSS VARIABLES ---------- */
 :root {
-  /* Brand colors */
   --black: #080808;
   --dark-gray: #171717;
   --gold: #D4AF37;
   --gold-light: #E8C964;
   --white: #FFFFFF;
 
-  /* Theme tokens (changed by light mode) */
   --bg: var(--black);
   --surface: var(--dark-gray);
   --surface-2: #202020;
@@ -34,7 +13,6 @@
   --border: rgba(212, 175, 55, 0.18);
   --header-bg: rgba(8, 8, 8, 0.88);
 
-  /* Typography */
   --font-heading: "Bebas Neue", Impact, "Arial Narrow", sans-serif;
   --font-body: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
   --fs-hero: clamp(3rem, 8vw, 6.5rem);
@@ -42,7 +20,6 @@
   --fs-h3: 1.35rem;
   --fs-body: 1rem;
 
-  /* Spacing scale */
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 1.5rem;
@@ -50,7 +27,6 @@
   --space-xl: 5rem;
   --section-pad: 6.5rem;
 
-  /* Misc */
   --radius: 14px;
   --radius-sm: 8px;
   --shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
@@ -60,7 +36,6 @@
   --header-h: 76px;
 }
 
-/* Light mode overrides (toggled by app.js) */
 body.light-mode {
   --bg: #F6F4EE;
   --surface: #FFFFFF;
@@ -72,7 +47,6 @@ body.light-mode {
   --shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
 }
 
-/* ---------- 2. RESET & BASE ---------- */
 *,
 *::before,
 *::after {
@@ -133,7 +107,6 @@ address {
   outline-offset: 3px;
 }
 
-/* ---------- 3. UTILITIES & BUTTONS ---------- */
 .container {
   width: min(100% - 2.5rem, var(--container));
   margin-inline: auto;
@@ -232,7 +205,6 @@ address {
   width: 100%;
 }
 
-/* ---------- 4. HEADER & NAVIGATION ---------- */
 .header {
   position: fixed;
   inset: 0 0 auto 0;
@@ -241,7 +213,6 @@ address {
   transition: background-color var(--transition), box-shadow var(--transition);
 }
 
-/* Added by JS once the user scrolls down */
 .header.scrolled {
   background: var(--header-bg);
   backdrop-filter: blur(12px);
@@ -316,7 +287,6 @@ address {
   color: var(--text);
 }
 
-/* Animated gold underline */
 .nav-link::after {
   content: "";
   position: absolute;
@@ -377,12 +347,10 @@ address {
   stroke-linecap: round;
 }
 
-/* Show sun in dark mode (click → light), moon in light mode */
 .icon-moon { display: none; }
 body.light-mode .icon-sun { display: none; }
 body.light-mode .icon-moon { display: block; }
 
-/* Hamburger button — hidden on desktop */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -405,12 +373,10 @@ body.light-mode .icon-moon { display: block; }
   transition: transform var(--transition), opacity var(--transition);
 }
 
-/* Hamburger turns into an X when open */
 .menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
 .menu-toggle.open span:nth-child(2) { opacity: 0; }
 .menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-/* ---------- 5. HERO ---------- */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -517,7 +483,6 @@ body.light-mode .icon-moon { display: block; }
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* Animated mouse scroll cue */
 .scroll-cue {
   position: absolute;
   left: 50%;
@@ -541,7 +506,6 @@ body.light-mode .icon-moon { display: block; }
   animation: scrollDot 1.8s infinite;
 }
 
-/* ---------- 6. ABOUT ---------- */
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -561,7 +525,6 @@ body.light-mode .icon-moon { display: block; }
   box-shadow: var(--shadow);
 }
 
-/* Gold frame behind the image */
 .about-media::before {
   content: "";
   position: absolute;
@@ -644,7 +607,6 @@ body.light-mode .icon-moon { display: block; }
   color: var(--text-muted);
 }
 
-/* ---------- 6b. COACHES (inside the About section) ---------- */
 .coaches {
   margin-top: var(--section-pad);
 }
@@ -676,7 +638,6 @@ body.light-mode .icon-moon { display: block; }
   overflow: hidden;
 }
 
-/* Thin gold line under each photo */
 .coach-photo::after {
   content: "";
   position: absolute;
@@ -744,7 +705,6 @@ body.light-mode .icon-moon { display: block; }
   font-weight: 600;
 }
 
-/* ---------- 7. FACILITIES ---------- */
 .facilities {
   background: var(--surface);
 }
@@ -765,7 +725,6 @@ body.light-mode .icon-moon { display: block; }
   transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
 }
 
-/* Gold bar slides in on hover */
 .facility-card::before {
   content: "";
   position: absolute;
@@ -825,7 +784,6 @@ body.light-mode .icon-moon { display: block; }
   font-size: 0.95rem;
 }
 
-/* ---------- 8. PROJECTS ---------- */
 .filters {
   display: flex;
   flex-wrap: wrap;
@@ -940,7 +898,6 @@ body.light-mode .icon-moon { display: block; }
   opacity: 1;
 }
 
-/* ---------- 9. CONTACT ---------- */
 .contact {
   background: var(--surface);
 }
@@ -1078,7 +1035,6 @@ body.light-mode .icon-moon { display: block; }
   color: var(--gold);
 }
 
-/* ---------- 10. FOOTER ---------- */
 .footer {
   padding-top: var(--space-xl);
   background: var(--bg);
@@ -1159,7 +1115,6 @@ body.light-mode .icon-moon { display: block; }
   color: var(--text-muted);
 }
 
-/* ---------- 11. TOAST, BACK-TO-TOP & ANIMATIONS ---------- */
 .toast {
   position: fixed;
   left: 50%;
@@ -1231,7 +1186,6 @@ body.light-mode .icon-moon { display: block; }
   stroke-linejoin: round;
 }
 
-/* Scroll reveal (class "visible" added by app.js) */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -1243,7 +1197,6 @@ body.light-mode .icon-moon { display: block; }
   transform: translateY(0);
 }
 
-/* If JavaScript is unavailable, never hide content */
 .no-js .reveal {
   opacity: 1;
   transform: none;
@@ -1259,9 +1212,6 @@ body.light-mode .icon-moon { display: block; }
   100% { opacity: 0; transform: translateY(14px); }
 }
 
-/* ---------- 12. RESPONSIVE (@media queries) ---------- */
-
-/* Tablets & small laptops */
 @media (max-width: 992px) {
   :root {
     --section-pad: 5rem;
@@ -1297,7 +1247,6 @@ body.light-mode .icon-moon { display: block; }
   }
 }
 
-/* Mobile navigation & phones */
 @media (max-width: 768px) {
   :root {
     --header-h: 68px;
@@ -1307,7 +1256,6 @@ body.light-mode .icon-moon { display: block; }
     display: flex;
   }
 
-  /* Slide-down mobile menu */
   .nav-links {
     position: fixed;
     top: var(--header-h);
@@ -1348,7 +1296,6 @@ body.light-mode .icon-moon { display: block; }
     display: none;
   }
 
-  /* Solid header while the menu is open */
   .header.menu-open {
     background: var(--header-bg);
   }
@@ -1391,7 +1338,6 @@ body.light-mode .icon-moon { display: block; }
   }
 }
 
-/* Small phones */
 @media (max-width: 576px) {
   .card-grid,
   .project-grid,
@@ -1413,7 +1359,6 @@ body.light-mode .icon-moon { display: block; }
   }
 }
 
-/* Touch screens can't hover: always show project card text */
 @media (hover: none) {
   .project-info {
     transform: none;
@@ -1428,7 +1373,6 @@ body.light-mode .icon-moon { display: block; }
   }
 }
 
-/* Respect users who prefer less motion */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
