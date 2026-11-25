@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <!-- ===== Page metadata ===== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TARA JIM — a premium strength and fitness gym. Build your strength. Own your journey.">
+  <meta name="theme-color" content="#080808">
+  <title>TARA JIM | Build Your Strength. Own Your Journey.</title>
+
+  <!-- Google Fonts: Bebas Neue (headings) + Inter (body text) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==================================================
+       HEADER & NAVIGATION
+       ================================================== -->
+  <header class="header" id="header">
+    <nav class="nav container" aria-label="Main navigation">
+      <!-- Logo -->
+      <a href="#home" class="logo" aria-label="TARA JIM home">
+        <span class="logo-mark" aria-hidden="true">T</span>
+        <span class="logo-text">TARA <span class="gold">JIM</span></span>
+      </a>
+
+      <!-- Navigation links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#facilities" class="nav-link">Facilities</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Theme (dark / light) toggle -->
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to light mode" title="Toggle light / dark mode">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+
+        <!-- Hamburger button (visible on mobile only) -->
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ==================================================
+         HERO SECTION
+         ================================================== -->
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <p class="eyebrow">Premium Strength &amp; Fitness Club</p>
+        <h1 class="hero-title">Build Your Strength.<br><span class="gold">Own Your Journey.</span></h1>
+        <p class="hero-text">
+          Every rep counts. At TARA JIM, we give you world-class equipment, expert coaches,
+          and a community that pushes you to lift heavier, move better, and live stronger.
+        </p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-gold">Join Now</a>
+          <a href="#facilities" class="btn btn-outline">Explore</a>
+        </div>
+        <!-- Greeting button (JavaScript interaction) -->
+        <button class="greet-btn" id="greetBtn" type="button">
+          <span aria-hidden="true">👋</span> Say Hello to TARA JIM
+        </button>
+
+        <!-- Quick stats -->
+        <ul class="hero-stats">
+          <li><strong data-count="1200">0</strong><span>Active Members</span></li>
+          <li><strong data-count="25">0</strong><span>Expert Coaches</span></li>
+          <li><strong data-count="40">0</strong><span>Weekly Classes</span></li>
+        </ul>
+      </div>
+      <a href="#about" class="scroll-cue" aria-label="Scroll to About section"><span></span></a>
+    </section>
+
+    <!-- ==================================================
+         ABOUT SECTION
+         ================================================== -->
+    <section class="section about" id="about">
+      <div class="container about-grid">
+        <figure class="about-media reveal">
+          <img src="images/about.jpg" alt="Inside TARA JIM: rows of squat racks and dumbbells under warm gold lights" width="1100" height="825" loading="lazy">
+          <figcaption class="about-badge">
+            <strong>10+</strong>
+            <span>Years of<br>Building Strength</span>
+          </figcaption>
+        </figure>
+
+        <div class="about-text reveal">
+          <p class="eyebrow">About Us</p>
+          <h2 class="section-title">More Than a Gym. <span class="gold">A Movement.</span></h2>
+          <p>
+            <strong>"Tara, Jim!"</strong> means <em>let's go to the gym</em>, and that is the invitation we give you. TARA JIM was
+            built for everyone who wants to get stronger, from first-time members to competitive
+            athletes. We combine professional equipment, science-based coaching, and a welcoming
+            community under one roof.
+          </p>
+
+          <div class="mv-grid">
+            <article class="mv-card">
+              <h3><span class="mv-icon" aria-hidden="true">◆</span> Our Mission</h3>
+              <p>To help every member build real strength — physically and mentally — through quality training, honest guidance, and a supportive environment.</p>
+            </article>
+            <article class="mv-card">
+              <h3><span class="mv-icon" aria-hidden="true">◆</span> Our Vision</h3>
+              <p>To be the most trusted fitness community in the region, where people of all levels feel inspired to lift, grow, and own their journey.</p>
+            </article>
+          </div>
+
+          <a href="#projects" class="btn btn-gold">See Our Programs</a>
+        </div>
+      </div>
+
+      <!-- ===== Coaches (part of the About section) ===== -->
+      <div class="container coaches">
+        <header class="section-header reveal">
+          <p class="eyebrow">Meet the Team</p>
+          <h2 class="section-title">Our <span class="gold">Coaches</span></h2>
+          <p class="section-sub">Certified, passionate and always in your corner. Our coaches build every plan around you.</p>
+        </header>
+
+        <div class="coach-grid">
+          <!-- Coach 1 -->
+          <article class="coach-card reveal">
+            <div class="coach-photo">
+              <img src="images/coach-jeremie.jpg" alt="Coach Jeremie Cagoy" width="640" height="640" loading="lazy">
+            </div>
+            <div class="coach-info">
+              <span class="tag">Head Coach</span>
+              <h3>Jeremie Cagoy</h3>
+              <p class="coach-role">Strength &amp; Powerlifting</p>
+              <p>Leads our Powerlifting Club. Jeremie coaches the squat, bench and deadlift with a focus on clean technique and steady progress.</p>
+              <ul class="coach-skills" aria-label="Specialties">
+                <li>Powerlifting</li>
+                <li>Strength Programs</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Coach 2 -->
+          <article class="coach-card reveal">
+            <div class="coach-photo">
+              <img src="images/coach-chris.jpg" alt="Coach Chris Kaede Calacala" width="640" height="640" loading="lazy">
+            </div>
+            <div class="coach-info">
+              <span class="tag">Conditioning Coach</span>
+              <h3>Chris Kaede Calacala</h3>
+              <p class="coach-role">HIIT &amp; Boxing Fit</p>
+              <p>Runs our HIIT Burn Bootcamp and Boxing Fit classes. Chris brings big energy that keeps every session fun, fast and sweaty.</p>
+              <ul class="coach-skills" aria-label="Specialties">
+                <li>HIIT</li>
+                <li>Boxing</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Coach 3 -->
+          <article class="coach-card reveal">
+            <div class="coach-photo">
+              <img src="images/coach-jomari.jpg" alt="Coach Jomari Sigua" width="640" height="640" loading="lazy">
+            </div>
+            <div class="coach-info">
+              <span class="tag">Wellness Coach</span>
+              <h3>Jomari Sigua</h3>
+              <p class="coach-role">Mobility &amp; Transformation</p>
+              <p>Guides our Mobility &amp; Recovery flows and the 12-Week Transformation. Jomari helps members move better and stay consistent.</p>
+              <ul class="coach-skills" aria-label="Specialties">
+                <li>Mobility</li>
+                <li>Nutrition Tips</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         FACILITIES SECTION
+         ================================================== -->
+    <section class="section facilities" id="facilities">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="eyebrow">Our Facilities</p>
+          <h2 class="section-title">Everything You Need to <span class="gold">Train Hard</span></h2>
+          <p class="section-sub">Professional-grade spaces and services designed for every goal and every fitness level.</p>
+        </header>
+
+        <div class="card-grid">
+          <!-- Card 1 -->
+          <article class="facility-card reveal">
+            <div class="facility-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6.5 6.5v11M17.5 6.5v11M3 9v6M21 9v6M6.5 12h11"/></svg>
+            </div>
+            <h3>Strength Training</h3>
+            <p>Power racks, platforms, and plate-loaded machines for serious progressive overload.</p>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="facility-card reveal">
+            <div class="facility-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>
+            </div>
+            <h3>Cardio Equipment</h3>
+            <p>Treadmills, rowers, air bikes, and stair climbers to boost endurance and heart health.</p>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="facility-card reveal">
+            <div class="facility-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="2" y="9" width="4" height="6" rx="1"/><rect x="18" y="9" width="4" height="6" rx="1"/><path d="M6 12h12"/><rect x="6" y="7" width="3" height="10" rx="1"/><rect x="15" y="7" width="3" height="10" rx="1"/></svg>
+            </div>
+            <h3>Free Weights</h3>
+            <p>Full dumbbell range up to 50 kg, kettlebells, barbells, and Olympic bumper plates.</p>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="facility-card reveal">
+            <div class="facility-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg>
+            </div>
+            <h3>Personal Training</h3>
+            <p>One-on-one sessions with certified coaches and plans built around your goals.</p>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="facility-card reveal">
+            <div class="facility-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 15l2 2 5-5"/></svg>
+            </div>
+            <h3>Fitness Programs</h3>
+            <p>Structured 8- to 12-week programs for fat loss, muscle gain, and athletic performance.</p>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="facility-card reveal">
+            <div class="facility-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20v-1a5 5 0 0 1 5-5h2a5 5 0 0 1 5 5v1M15 14.5a4 4 0 0 1 6 3.5v1"/></svg>
+            </div>
+            <h3>Group Training</h3>
+            <p>High-energy classes led by coaches — sweat, push, and progress together as a team.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         PROJECTS SECTION (activities & programs)
+         ================================================== -->
+    <section class="section projects" id="projects">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="eyebrow">Projects &amp; Programs</p>
+          <h2 class="section-title">Activities That <span class="gold">Push Limits</span></h2>
+          <p class="section-sub">Explore the training programs and community activities happening every week at TARA JIM.</p>
+        </header>
+
+        <!-- Filter buttons (JavaScript interaction) -->
+        <div class="filters" role="group" aria-label="Filter programs">
+          <button class="filter-btn active" type="button" data-filter="all">All</button>
+          <button class="filter-btn" type="button" data-filter="strength">Strength</button>
+          <button class="filter-btn" type="button" data-filter="conditioning">Conditioning</button>
+          <button class="filter-btn" type="button" data-filter="wellness">Wellness</button>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card reveal" data-category="conditioning">
+            <img src="images/project-hiit.jpg" alt="Group doing a high-intensity kettlebell workout" width="900" height="675" loading="lazy">
+            <div class="project-info">
+              <span class="tag">Conditioning</span>
+              <h3>HIIT Burn Bootcamp</h3>
+              <p>45-minute high-intensity circuits that torch calories and build stamina.</p>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="conditioning">
+            <img src="images/project-boxing.jpg" alt="Boxer hitting a heavy bag with gold gloves" width="900" height="675" loading="lazy">
+            <div class="project-info">
+              <span class="tag">Conditioning</span>
+              <h3>Boxing Fit</h3>
+              <p>Learn real striking technique while building speed, power, and focus.</p>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="strength">
+            <img src="images/project-powerlifting.jpg" alt="Athlete squatting a heavy barbell in a power rack" width="900" height="675" loading="lazy">
+            <div class="project-info">
+              <span class="tag">Strength</span>
+              <h3>Powerlifting Club</h3>
+              <p>Coached squat, bench, and deadlift sessions plus our yearly in-house meet.</p>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="wellness">
+            <img src="images/project-yoga.jpg" alt="Members stretching on mats in a calm studio" width="900" height="675" loading="lazy">
+            <div class="project-info">
+              <span class="tag">Wellness</span>
+              <h3>Mobility &amp; Recovery</h3>
+              <p>Stretching and yoga-based flows to improve flexibility and prevent injury.</p>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="strength">
+            <img src="images/project-coaching.jpg" alt="Personal trainer guiding a client's dumbbell form" width="900" height="675" loading="lazy">
+            <div class="project-info">
+              <span class="tag">Strength</span>
+              <h3>12-Week Transformation</h3>
+              <p>A coached challenge with progress check-ins, nutrition tips, and real results.</p>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="wellness">
+            <img src="images/project-cardio.jpg" alt="Members running on treadmills facing a city view" width="900" height="675" loading="lazy">
+            <div class="project-info">
+              <span class="tag">Wellness</span>
+              <h3>Cardio Night Run</h3>
+              <p>Weekly community cardio sessions to build endurance and heart health.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         CONTACT SECTION
+         ================================================== -->
+    <section class="section contact" id="contact">
+      <div class="container contact-grid">
+        <!-- Contact information -->
+        <div class="contact-info reveal">
+          <p class="eyebrow">Contact Us</p>
+          <h2 class="section-title">Start Your <span class="gold">Journey Today</span></h2>
+          <p>Have a question or ready to join? Send us a message and our team will get back to you within 24 hours.</p>
+
+          <ul class="info-list">
+            <li>
+              <span class="info-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+              <div><strong>Address</strong><address>Building 2 Unit 52, Great Mall of Central Luzon, Xevera Plaza, Mabalacat City, 2010 Pampanga</address></div>
+            </li>
+            <li>
+              <span class="info-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
+              <div><strong>Phone</strong><a href="tel:+639184525637">0918 452 5637</a></div>
+            </li>
+            <li>
+              <span class="info-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></span>
+              <div><strong>Email</strong><a href="mailto:hello@tarajim.com">hello@tarajim.com</a></div>
+            </li>
+            <li>
+              <span class="info-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+              <div><strong>Opening Hours</strong><span>Mon–Sat: 5:00 AM – 11:00 PM<br>Sun: 7:00 AM – 7:00 PM</span></div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact form (validated with JavaScript, no backend needed) -->
+        <form class="contact-form reveal" id="contactForm" novalidate>
+          <h3>Send a Message</h3>
+
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Jomari Sigua" autocomplete="name" required>
+            <small class="error-msg" aria-live="polite"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="jsigs@gmail.com" autocomplete="email" required>
+            <small class="error-msg" aria-live="polite"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us about your fitness goals..." required></textarea>
+            <small class="error-msg" aria-live="polite"></small>
+          </div>
+
+          <button type="submit" class="btn btn-gold btn-block">Submit</button>
+          <p class="form-success" id="formSuccess" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================================================
+       FOOTER
+       ================================================== -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <!-- Branding -->
+      <div class="footer-brand">
+        <a href="#home" class="logo">
+          <span class="logo-mark" aria-hidden="true">T</span>
+          <span class="logo-text">TARA <span class="gold">JIM</span></span>
+        </a>
+        <p>Build your strength. Own your journey. A premium gym for every lifter, every level.</p>
+
+        <!-- Social media links -->
+        <div class="socials">
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5"/></svg>
+          </a>
+          <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+            <svg viewBox="0 0 24 24"><path d="M9 12a4 4 0 1 0 4 4V2a5 5 0 0 0 5 5"/></svg>
+          </a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick links -->
+      <nav class="footer-links" aria-label="Footer navigation">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#facilities">Facilities</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Hours -->
+      <div class="footer-links">
+        <h4>Opening Hours</h4>
+        <ul>
+          <li>Mon – Sat: 5AM – 11PM</li>
+          <li>Sunday: 7AM – 7PM</li>
+          <li><a href="mailto:hello@tarajim.com">hello@tarajim.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="year">2026</span> TARA JIM. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Back-to-top button -->
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <!-- Greeting / welcome message popup -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Main JavaScript file -->
+  <script src="app.js"></script>
+</body>
+</html>
