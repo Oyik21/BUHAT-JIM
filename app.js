@@ -1,23 +1,6 @@
-/* ==========================================================
-   TARA JIM — Main JavaScript
-   Features:
-     1.  Mobile navigation menu (hamburger toggle)
-     2.  Smooth scrolling for in-page links
-     3.  Header style + active nav link while scrolling
-     4.  Dark / light mode toggle (saved in localStorage)
-     5.  Greeting button with welcome message
-     6.  Animated hero stat counters
-     7.  Project filter buttons
-     8.  Contact form validation
-     9.  Scroll reveal animations
-     10. Back-to-top button & footer year
-   ========================================================== */
-
-// JavaScript is running, so allow scroll-reveal animations
 document.documentElement.classList.remove("no-js");
 
 document.addEventListener("DOMContentLoaded", () => {
-  /* ---------- Element references ---------- */
   const header = document.getElementById("header");
   const menuToggle = document.getElementById("menuToggle");
   const navLinks = document.getElementById("navLinks");
@@ -29,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const backToTop = document.getElementById("backToTop");
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* ---------- 1. Mobile navigation menu ---------- */
   function setMenu(open) {
     navLinks.classList.toggle("open", open);
     menuToggle.classList.toggle("open", open);
@@ -42,19 +24,16 @@ document.addEventListener("DOMContentLoaded", () => {
     setMenu(!navLinks.classList.contains("open"));
   });
 
-  // Close the menu with the Escape key
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") setMenu(false);
   });
 
-  // Close the menu when clicking outside of it
   document.addEventListener("click", (event) => {
     if (navLinks.classList.contains("open") && !header.contains(event.target)) {
       setMenu(false);
     }
   });
 
-  /* ---------- 2. Smooth scrolling ---------- */
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", (event) => {
       const targetId = anchor.getAttribute("href");
@@ -67,28 +46,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
       window.scrollTo({ top, behavior: prefersReducedMotion ? "auto" : "smooth" });
       history.replaceState(null, "", targetId);
-      setMenu(false); // close the mobile menu after choosing a link
+      setMenu(false);
     });
   });
 
-  /* ---------- 3. Header style + active link on scroll ---------- */
   function onScroll() {
     const scrollY = window.scrollY;
 
-    // Solid header background after scrolling a little
     header.classList.toggle("scrolled", scrollY > 40);
-
-    // Show the back-to-top button after scrolling down
     backToTop.classList.toggle("show", scrollY > 600);
 
-    // Highlight the nav link for the section currently in view
     let currentId = "home";
     sections.forEach((section) => {
       if (scrollY >= section.offsetTop - header.offsetHeight - 120) {
         currentId = section.id;
       }
     });
-    // At the very bottom of the page, the last section is active
     if (window.innerHeight + scrollY >= document.body.scrollHeight - 2) {
       currentId = sections[sections.length - 1].id;
     }
@@ -101,14 +74,12 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  /* ---------- 4. Dark / light mode toggle ---------- */
   function applyTheme(theme) {
     const isLight = theme === "light";
     document.body.classList.toggle("light-mode", isLight);
     themeToggle.setAttribute("aria-label", isLight ? "Switch to dark mode" : "Switch to light mode");
   }
 
-  // Load the saved theme (dark is the default)
   let savedTheme = "dark";
   try {
     savedTheme = localStorage.getItem("buhat-theme") || "dark";
@@ -128,7 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
     showToast(next === "light" ? "☀️ Light mode on" : "🌙 Dark mode on");
   });
 
-  /* ---------- 5. Greeting button / welcome message ---------- */
   let toastTimer;
 
   function showToast(html, duration = 3500) {
@@ -153,7 +123,6 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   });
 
-  /* ---------- 6. Animated hero counters ---------- */
   function animateCounter(element) {
     const target = Number(element.dataset.count);
     const duration = 1600;
@@ -161,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function step(now) {
       const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3); // ease-out
+      const eased = 1 - Math.pow(1 - progress, 3);
       element.textContent = Math.floor(eased * target).toLocaleString();
       if (progress < 1) requestAnimationFrame(step);
     }
@@ -176,7 +145,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  /* ---------- 7. Project filter buttons ---------- */
   const filterButtons = document.querySelectorAll(".filter-btn");
   const projectCards = document.querySelectorAll(".project-card");
 
@@ -192,12 +160,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* ---------- 8. Contact form validation ---------- */
   const form = document.getElementById("contactForm");
   const formSuccess = document.getElementById("formSuccess");
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  // Show or clear an error message for one field
   function setError(input, message) {
     const group = input.closest(".form-group");
     group.classList.toggle("invalid", Boolean(message));
@@ -225,7 +191,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const fields = form.querySelectorAll("input, textarea");
 
-  // Re-check a field while typing once it has shown an error
   fields.forEach((input) => {
     input.addEventListener("input", () => {
       if (input.closest(".form-group").classList.contains("invalid")) {
@@ -235,7 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   form.addEventListener("submit", (event) => {
-    event.preventDefault(); // static site: no backend, handle it here
+    event.preventDefault();
     formSuccess.textContent = "";
 
     let firstInvalid = null;
@@ -251,14 +216,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const firstName = form.fullName.value.trim().split(/\s+/)[0];
-    // Escape the name before placing it inside the HTML toast
     const safeName = firstName.replace(/[&<>"']/g, (char) => `&#${char.charCodeAt(0)};`);
     formSuccess.textContent = `Thank you, ${firstName}! Your message has been received. We'll contact you soon.`;
     showToast(`✅ Message sent! See you at <strong>TARA JIM</strong>, ${safeName}.`);
     form.reset();
   });
 
-  /* ---------- 9. Scroll reveal animations ---------- */
   const revealItems = document.querySelectorAll(".reveal");
 
   if ("IntersectionObserver" in window && !prefersReducedMotion) {
@@ -278,7 +241,6 @@ document.addEventListener("DOMContentLoaded", () => {
     revealItems.forEach((item) => item.classList.add("visible"));
   }
 
-  /* ---------- 10. Back-to-top button & footer year ---------- */
   backToTop.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
   });
